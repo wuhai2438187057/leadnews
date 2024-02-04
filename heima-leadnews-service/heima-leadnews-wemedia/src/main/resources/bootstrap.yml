@@ -1,0 +1,36 @@
+server:
+  port: 51803
+spring:
+  application:
+    name: leadnews-wemedia
+  kafka:
+    bootstrap-servers:
+    producer:
+      retries: 10
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB
+minio:
+  accessKey:
+  secretKey:
+  bucket: leadnews
+  endpoint:
+aliyun:
+  accessKeyId:
+  secret:
+  #aliyun.scenes=porn,terrorism,ad,qrcode,live,logo
+  scenes: terrorism
+tess4j:
+  data-path: D:\workspace\tessdata
+  language: chi_sim

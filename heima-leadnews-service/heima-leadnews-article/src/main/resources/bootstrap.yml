@@ -1,0 +1,28 @@
+server:
+  port: 51802
+spring:
+  application:
+    name: leadnews-article
+  kafka:
+    bootstrap-servers:
+    consumer:
+      group-id: group123
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      retries: 10
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+minio:
+  accessKey: minioadmin
+  secretKey: minioadminxrj
+  bucket: leadnews
+  endpoint: 
+  readPath:
